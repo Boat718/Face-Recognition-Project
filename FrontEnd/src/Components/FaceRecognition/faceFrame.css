@@ -1,0 +1,30 @@
+.bounding-box{
+    position: absolute;
+    box-shadow: 0 0 0 2.5px #149df2 inset;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.face{
+    position: absolute;
+    top:0;
+    left: 0;
+    transform: translateY(-100%);
+    background: #149df2;
+    color: #fff;
+    white-space: nowrap;
+    font-size: 1.2rem;
+    line-height: 1.2rem;
+    display: flex;
+    align-items: baseline;
+    font-weight:350;
+    padding: 1px 2px;
+    border-radius: 2.5px 2.5px 0 0;
+}
+
+.value{
+    margin-left: 5px;
+    font-size: 1.1rem;
+}
