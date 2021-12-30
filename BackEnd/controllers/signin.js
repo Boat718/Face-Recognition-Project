@@ -15,10 +15,10 @@ const handleSignin =(db,bcrypt)=> (req,res)=>{
                 })
                 .catch(err=>res.status(400).json('Unable to get user'));
             }else{
-                res.status(400).json('Wrong credentials');
+                res.status(400).json('Email Or Password is wrong!!');
             }
         })
-        .catch(err=> res.status(400).json('Wrong credentials'));
+        .catch(err=> res.status(400).json('Email Or Password is wrong!!'));
 }
 
 module.exports = {
