@@ -5,34 +5,11 @@ import 'tachyons'
 import Logo from './Components/Logo/Logo';
 import ImageLinkForm from './Components/ImageLinkForm/ImageLinkForm';
 import Rank from './Components/Rank/Rank';
-import Particles from 'react-particles-js';
 import FaceRecognition from './Components/FaceRecognition/FaceRecognition';
 import Signin from './Components/Signin/Signin';
 import Register from './Components/Register/Register';
+import Particless from './Components/Particles/Particless';
 
-
-const particleOption = {
-  particles: {
-      number: {
-          value: 80,
-          density:{
-            enable:true,
-            value_area:800
-          }
-      },
-      size: {
-          value: 5
-      }
-  },
-  interactivity: {
-      events: {
-          onhover: {
-              enable: true,
-              mode: "repulse"
-          }
-      }
-  }
-}
 
 const initialState = {
   input:'',
@@ -123,7 +100,7 @@ class App extends Component {
   OnPictureSubmit = ()=>{
     this.setState({imageUrl:this.state.input});
     console.log(this.state.input);
-    fetch('https://sleepy-fjord-28889.herokuapp.com/imageurl',{
+    fetch('https://facerecognition-backend-1.herokuapp.com/imageurl',{
       method:'post',
       headers:{'content-Type':'application/json'},
       body:JSON.stringify({
@@ -134,7 +111,7 @@ class App extends Component {
     .then(response=> {
       console.log(response);
       if(response){
-        fetch('https://sleepy-fjord-28889.herokuapp.com/image',{
+        fetch('https://facerecognition-backend-1.herokuapp.com/image',{
             method:'put',
             headers:{'content-Type':'application/json'},
             body:JSON.stringify({
@@ -167,8 +144,7 @@ class App extends Component {
     // const {isSignedIn,imageUrl,box,route } = this.state;
     return (
       <div className="App">
-         <Particles className='particles'
-                params={particleOption} />
+         <Particless/>
         <Navigation isSignedIn={this.state.isSignedIn} onRouteChange = {this.onRouteChange} />
         {
           this.state.route === 'home' ?

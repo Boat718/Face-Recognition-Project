@@ -20,7 +20,7 @@ class Signin extends React.Component{
     }
 
     onSubmitSignIn = ()=>{
-        fetch('https://sleepy-fjord-28889.herokuapp.com/signin',{
+        fetch('https://facerecognition-backend-1.herokuapp.com/signin',{
             method:'post',
             headers:{'content-Type':'application/json'},
             body:JSON.stringify({
@@ -33,7 +33,10 @@ class Signin extends React.Component{
                 this.props.loadUser(user);
                 this.props.onRouteChange('home');
             }
-            console.log(user)
+            else{
+
+                alert(JSON.stringify(user))
+            }
         })
     }
 
